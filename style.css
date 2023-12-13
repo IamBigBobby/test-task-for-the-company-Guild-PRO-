@@ -1,0 +1,55 @@
+.wrapper {
+    margin: 0 auto;
+
+    max-width: 1500px;
+}
+
+.categories {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    background-color: rgb(238, 233, 233);
+}
+
+.categories__item {
+    padding: 7px 5px 7px 5px;
+
+    background-color: rgb(182, 173, 173);
+
+    border-top: 1px solid black; 
+    border-left: 1px solid black; 
+    border-right: 1px solid black;
+    
+    border-top-left-radius: 3px; 
+    border-top-right-radius: 3px;
+
+    cursor: pointer;
+}
+
+.category-block__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    min-height: 500px;
+
+    border: 1px solid black;
+}
+
+.category-block__product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 200px;
+    height: 200px;
+}
+
+.category-block__product-item-img {
+    width: 100px;
+    height: 100px;
+    background: url('http://rrstatic.retailrocket.net/test_task/tovar.jpg');
+    background-size: cover;
+}

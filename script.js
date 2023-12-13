@@ -79,12 +79,12 @@ function createProductElements(data) {
 
             if (categoriesBlock[i].categoryId === j) {
                 const categoryItem = document.createElement("div");
-                categoryItem.className = `category-block__product-item_${j}`;
+                categoryItem.className = `category-block__product-item`;
                 categoryItem.innerHTML = `
+                <div class="category-block__product-item-img"></div>
                 <div class="category-block__product-item-name">
                     ${categoriesBlock[i]["productName"]}
                 </div>
-                <div class="category-block__product-item-img"></div>
                 `;
 
                 const categoryBlock = document.querySelector(`.category-block__item${j}`);
