@@ -30,6 +30,10 @@
     transition: 1s;
 }
 
+.categories__item_active {
+    background-color: rgb(182, 173, 173);
+}
+
 .categories__item:hover {
     background-color: rgb(238, 233, 233);
 }

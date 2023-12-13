@@ -38,7 +38,14 @@ function createCategory(data) {
 
     for (let i = 0; i < categories.length; i++) {
         const category = document.createElement("div");
-        category.className = `categories__item categories__item_${categories[i].categoryId}`;
+
+        if (i === 0) {
+            console.log('')
+            category.className = `categories__item categories__item_${categories[i].categoryId} categories__item_active`;
+        } else {
+            category.className = `categories__item categories__item_${categories[i].categoryId}`;
+        }
+
         category.innerHTML = `${categories[i].categoryName}`;
 
         const containerElement = document.querySelector('.categories');
