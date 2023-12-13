@@ -42,7 +42,7 @@ function createCategory(data) {
         category.innerHTML = `${categories[i].categoryName}`;
 
         const containerElement = document.querySelector('.categories');
-        containerElement.insertAdjacentElement('afterbegin', category);
+        containerElement.insertAdjacentElement('beforeend', category);
     }
 
 }
