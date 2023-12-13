@@ -12,6 +12,7 @@ function getData() {
         createProductBlock();
         createProductBlockCategories(data);
         createProductElements(data);
+        toggleCategories();
     })
 }
 
@@ -72,7 +73,7 @@ function createProductBlockCategories(data) {
         itemCategoryBlock.innerHTML = ``;
 
         const categoryBlock = document.querySelector('.category-block');
-        categoryBlock.insertAdjacentElement('beforqeend', itemCategoryBlock);
+        categoryBlock.insertAdjacentElement('beforeend', itemCategoryBlock);
 
         if (i > 0) {
             itemCategoryBlock.style.display = 'none';
@@ -108,6 +109,19 @@ function createProductElements(data) {
 
     }
 
+}
+
+function toggleCategories() {
+    const categories = document.querySelectorAll('.categories__item');
+    console.log(categories);
+    categories.forEach((category) => {
+        category.addEventListener('click', function(event){
+            categories.forEach((category) => {
+                category.classList.remove('categories__item_active');
+            });
+            event.target.classList.toggle('categories__item_active');
+        });
+    });
 }
 
 getData();
