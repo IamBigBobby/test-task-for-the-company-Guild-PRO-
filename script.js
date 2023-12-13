@@ -41,7 +41,6 @@ function createCategory(data) {
         const category = document.createElement("div");
 
         if (i === 0) {
-            console.log('')
             category.className = `categories__item categories__item_${categories[i].categoryId} categories__item_active`;
         } else {
             category.className = `categories__item categories__item_${categories[i].categoryId}`;
@@ -113,15 +112,32 @@ function createProductElements(data) {
 
 function toggleCategories() {
     const categories = document.querySelectorAll('.categories__item');
-    console.log(categories);
     categories.forEach((category) => {
         category.addEventListener('click', function(event){
             categories.forEach((category) => {
                 category.classList.remove('categories__item_active');
             });
             event.target.classList.toggle('categories__item_active');
+
+            toggleBlockCategories(event)
         });
     });
+}
+
+function toggleBlockCategories(event){
+    const categories = document.querySelectorAll('.categories__item');
+    const blocks = document.querySelectorAll('.category-block__item');
+
+    const categoriesArr = [...categories];
+    const categoryIndex = categoriesArr.indexOf(event.target);
+
+    blocks.forEach((category) => {
+        category.style.display = 'none';
+    })
+
+    const toggleBlock = document.querySelector(`.category-block__item${categoryIndex + 1}`);
+
+    toggleBlock.style.display = 'flex';
 }
 
 getData();
