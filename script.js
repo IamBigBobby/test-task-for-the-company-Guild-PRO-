@@ -40,7 +40,7 @@ function createCategory(data) {
     for (let i = 0; i < categories.length; i++) {
         const category = document.createElement("div");
 
-        if (i === 0) {
+        if (i === 1) {
             category.className = `categories__item categories__item_${categories[i].categoryId} categories__item_active`;
         } else {
             category.className = `categories__item categories__item_${categories[i].categoryId}`;
@@ -74,7 +74,7 @@ function createProductBlockCategories(data) {
         const categoryBlock = document.querySelector('.category-block');
         categoryBlock.insertAdjacentElement('beforeend', itemCategoryBlock);
 
-        if (i > 0) {
+        if (i < 1 || i > 1) {
             itemCategoryBlock.style.display = 'none';
         }
     }
