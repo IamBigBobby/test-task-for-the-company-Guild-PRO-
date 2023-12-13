@@ -25,7 +25,7 @@
         {"productId":23, "productName": "Товар 23", "categoryId":3},
         {"productId":24, "productName": "Товар 24", "categoryId":4},
         {"productId":25, "productName": "Товар 25", "categoryId":5},
-        {"productId":26, "productName": "Товар 25", "categoryId":6}
+        {"productId":26, "productName": "Товар 26", "categoryId":6}
     ],
     
     "categories": [
