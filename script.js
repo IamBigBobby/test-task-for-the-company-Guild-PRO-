@@ -10,7 +10,7 @@ function getData() {
         createWrapper();
         createContainerCategory();
         createCategory(data);
-        // createProductBlocks();
+        createProductBlock();
         // createProductBlock(data);
     })
 }
@@ -30,7 +30,7 @@ function createContainerCategory() {
     categories.innerHTML = ``;
 
     const wrapperElement = document.querySelector('.wrapper');
-    wrapperElement.insertAdjacentElement('afterbegin' ,categories);
+    wrapperElement.insertAdjacentElement('afterbegin', categories);
 }
 
 function createCategory(data) {
@@ -42,9 +42,18 @@ function createCategory(data) {
         category.innerHTML = `${categories[i].categoryName}`;
 
         const containerElement = document.querySelector('.categories');
-        containerElement.appendChild(category);
+        containerElement.insertAdjacentElement('afterbegin', category);
     }
 
+}
+
+function createProductBlock() {
+    const categoryBlock = document.createElement("div");
+    categoryBlock.className = "category-block";
+    categoryBlock.innerHTML = ``;
+
+    const wrapperElement = document.querySelector('.wrapper');
+    wrapperElement.insertAdjacentElement('beforeend', categoryBlock);
 }
 
 // function createProductBlocks() {
