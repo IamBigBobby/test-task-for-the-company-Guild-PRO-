@@ -1,7 +1,7 @@
 .wrapper {
     margin: 0 auto;
 
-    max-width: 1500px;
+    max-width: 1000px;
 }
 
 .categories {
@@ -26,11 +26,18 @@
     border-top-right-radius: 3px;
 
     cursor: pointer;
+
+    transition: 1s;
+}
+
+.categories__item:hover {
+    background-color: rgb(238, 233, 233);
 }
 
 .category-block__item {
     display: flex;
     flex-wrap: wrap;
+    gap: 50px;
     padding: 20px;
 
     min-height: 500px;
@@ -43,8 +50,10 @@
     flex-direction: column;
     justify-content: center;
 
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: 150px;
+
+    cursor: pointer;
 }
 
 .category-block__product-item-img {
