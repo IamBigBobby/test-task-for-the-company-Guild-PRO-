@@ -12,7 +12,7 @@ function getData() {
         createCategory(data);
         createProductBlock();
         createProductBlockCategories(data);
-        // createProductBlock(data);
+        createProductElements(data);
     })
 }
 
@@ -70,31 +70,28 @@ function createProductBlockCategories(data) {
     }
 
 }
-// function createProductBlocks() {
-//     const categoryBlock = document.createElement("div");
-//     categories.className = "categories";
-//     categories.innerHTML = ``;
 
-//     const wrapperElement = document.querySelector('.wrapper');
-//     wrapperElement.appendChild(categories);
-// }
+function createProductElements(data) {
+    const categoriesBlock = data.products;
 
-// function createProductElements(data) {
-//     const categoriesBlock = data.products;
+    for (let i = 0; i < categoriesBlock.length; i++) {     
 
-//     for (let i = 0; i < categoriesBlock.length; i++) {     
-// // dynamic change of categories when adding a new product category
-//         for (let j = 1; j <= data.categories.length; j++) {
+        for (let j = 1; j <= data.categories.length; j++) {
 
-//             if (categoriesBlock[i].categoryId === j) {
-//                 console.log(categoriesBlock[i]);    
-//             }
+            if (categoriesBlock[i].categoryId === j) {
+                const categoryItem = document.createElement("div");
+                categoryItem.className = `category-block__product-item_${j}`;
+                categoryItem.innerHTML = `${categoriesBlock[i]["productName"]}`;
 
-//         }
+                const categoryBlock = document.querySelector(`.category-block__item${j}`);
+                categoryBlock.insertAdjacentElement('beforeend', categoryItem);
+            }
 
-//     }
+        }
 
-// }
+    }
+
+}
 
 getData();
 
