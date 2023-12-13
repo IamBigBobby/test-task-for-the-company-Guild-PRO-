@@ -7,10 +7,10 @@ function getData() {
     })
     .then(data => {
         data;
-        console.log(data);
         createWrapper();
         createContainerCategory();
         createCategory(data);
+        // createProductBlocks();
         // createProductBlock(data);
     })
 }
@@ -21,16 +21,18 @@ function createWrapper() {
     wrapper.innerHTML = ``;
 
     const bodyElement = document.body;
-    bodyElement.appendChild(wrapper);
+    bodyElement.insertAdjacentElement('afterbegin' ,wrapper);
 }
+
 function createContainerCategory() {
     const categories = document.createElement("div");
     categories.className = "categories";
     categories.innerHTML = ``;
 
     const wrapperElement = document.querySelector('.wrapper');
-    wrapperElement.appendChild(categories);
+    wrapperElement.insertAdjacentElement('afterbegin' ,categories);
 }
+
 function createCategory(data) {
     const categories = data.categories;
 
@@ -41,9 +43,36 @@ function createCategory(data) {
 
         const containerElement = document.querySelector('.categories');
         containerElement.appendChild(category);
-        console.log(categories[i].categoryName);
     }
+
 }
+
+// function createProductBlocks() {
+//     const categoryBlock = document.createElement("div");
+//     categories.className = "categories";
+//     categories.innerHTML = ``;
+
+//     const wrapperElement = document.querySelector('.wrapper');
+//     wrapperElement.appendChild(categories);
+// }
+
+// function createProductElements(data) {
+//     const categoriesBlock = data.products;
+
+//     for (let i = 0; i < categoriesBlock.length; i++) {     
+// // dynamic change of categories when adding a new product category
+//         for (let j = 1; j <= data.categories.length; j++) {
+
+//             if (categoriesBlock[i].categoryId === j) {
+//                 console.log(categoriesBlock[i]);    
+//             }
+
+//         }
+
+//     }
+
+// }
+
 getData();
 
 
