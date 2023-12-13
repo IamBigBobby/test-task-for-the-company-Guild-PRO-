@@ -6,7 +6,6 @@ function getData() {
         return response.json();
     })
     .then(data => {
-        data;
         createWrapper();
         createContainerCategory();
         createCategory(data);
@@ -81,7 +80,12 @@ function createProductElements(data) {
             if (categoriesBlock[i].categoryId === j) {
                 const categoryItem = document.createElement("div");
                 categoryItem.className = `category-block__product-item_${j}`;
-                categoryItem.innerHTML = `${categoriesBlock[i]["productName"]}`;
+                categoryItem.innerHTML = `
+                <div class="category-block__product-item-name">
+                    ${categoriesBlock[i]["productName"]}
+                </div>
+                <div class="category-block__product-item-img"></div>
+                `;
 
                 const categoryBlock = document.querySelector(`.category-block__item${j}`);
                 categoryBlock.insertAdjacentElement('beforeend', categoryItem);
