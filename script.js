@@ -11,6 +11,7 @@ function getData() {
         createContainerCategory();
         createCategory(data);
         createProductBlock();
+        createProductBlockCategories(data);
         // createProductBlock(data);
     })
 }
@@ -56,6 +57,19 @@ function createProductBlock() {
     wrapperElement.insertAdjacentElement('beforeend', categoryBlock);
 }
 
+function createProductBlockCategories(data) {
+    const catigoriesLenght = data.categories.length;
+
+    for (let i = 0; i < catigoriesLenght; i++){
+        const itemCategoryBlock = document.createElement("div");
+        itemCategoryBlock.className = `category-block__item category-block__item${i + 1}`;
+        itemCategoryBlock.innerHTML = ``;
+
+        const categoryBlock = document.querySelector('.category-block');
+        categoryBlock.insertAdjacentElement('beforeend', itemCategoryBlock);
+    }
+
+}
 // function createProductBlocks() {
 //     const categoryBlock = document.createElement("div");
 //     categories.className = "categories";
