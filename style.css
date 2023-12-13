@@ -1,5 +1,9 @@
 .wrapper {
     margin: 0 auto;
+    padding: 5px;
+
+    background-color: rgb(238, 233, 233);
+
 
     max-width: 1000px;
 }
@@ -7,12 +11,8 @@
 .categories {
     display: flex;
     padding: 10px 10px 0px 10px;
-    margin-left: -5px;
-    margin-right: -5px;
     gap: 10px;
     flex-wrap: wrap;
-
-    background-color: rgb(238, 233, 233);
 }
 
 .categories__item {
